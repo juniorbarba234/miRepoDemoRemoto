@@ -1,4 +1,4 @@
-import useAuthLocalStorage from './useAuthLocalStorage.jsx';
+import useAuthLocalStorage from './useAuthLocalStorage.';
 
 export default function AppLocalStorage() {
     const { token, login, logout } = useAuthLocalStorage();
