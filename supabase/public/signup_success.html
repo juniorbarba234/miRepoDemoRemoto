@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS_AUTH | Success</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #050505;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            text-align: center;
+            padding: 40px;
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid #00ffcc;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+        }
+        h1 { color: #00ffcc; margin-top: 0; letter-spacing: 2px; }
+        p { font-size: 16px; color: #aaa; margin-bottom: 30px; line-height: 1.5; }
+        button {
+            background: transparent;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 12px 24px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        button:hover { background: #00ffcc; color: #000; box-shadow: 0 0 15px #00ffcc; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>[ REGISTRO COMPLETADO ]</h1>
+        <p>> Datos almacenados correctamente.<br>> Requiere confirmación de red (Email) para habilitar el acceso.</p>
+        <button onclick="window.location.href='/'">VOLVER AL LOGIN</button>
+    </div>
+    
+</body>
+</html>

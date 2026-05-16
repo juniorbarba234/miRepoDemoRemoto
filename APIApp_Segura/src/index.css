@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: #050505;
+  background-image: 
+    linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: #eee;
+  min-height: 100vh;
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* --- SIDEBAR (ANTIGUO NAVBAR) --- */
+.sidebar {
+  width: 250px;
+  background: rgba(10, 10, 15, 0.95);
+  border-right: 2px solid #00ffcc;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  box-shadow: 5px 0 15px rgba(0, 255, 204, 0.1);
+}
+
+.sidebar-brand {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffcc;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.sidebar-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar-links a:hover {
+  color: #00ffcc;
+  border-color: #00ffcc;
+  background: rgba(0, 255, 204, 0.1);
+}
+
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  border-top: 1px dashed #444;
+  padding-top: 20px;
+}
+
+.nav-user {
+  color: #ff00ff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid #ff003c;
+  color: #ff003c;
+  padding: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.btn-logout:hover {
+  background: #ff003c;
+  color: #000;
+  box-shadow: 0 0 15px #ff003c;
+}
+
+/* --- DASHBOARD AGRUPADO (NUEVO) --- */
+.dashboard-grouped {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.dashboard-panel {
+  background: rgba(10, 10, 15, 0.8);
+  border: 1px solid #333;
+  padding: 20px;
+  position: relative;
+}
+
+.dashboard-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, #00ffcc, #ff00ff);
+}
+
+/* --- ESTILOS DE COMPONENTES EXISTENTES ADAPTADOS --- */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.auth-card {
+  background: rgba(10, 10, 15, 0.9);
+  padding: 40px;
+  border: 1px solid #ff00ff;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.auth-card h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00ffcc;
+  text-transform: uppercase;
+}
+
+.form-group input, .search-input, .type-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+.form-group input:focus, .search-input:focus, .type-select:focus {
+  outline: none;
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 255, 204, 0.1);
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: #00ffcc;
+  color: #000;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.pokemon-card {
+  background: #0a0a0f;
+  border: 1px solid #333;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pokemon-card:hover {
+  border-color: #00ffcc;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+.pokemon-name {
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.loading {
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 900px) {
+  .app-layout { flex-direction: column; }
+  .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #00ffcc; flex-direction: row; align-items: center; justify-content: space-between; padding: 15px; }
+  .sidebar-brand { margin-bottom: 0; font-size: 1.5rem; }
+  .sidebar-links { flex-direction: row; }
+  .sidebar-footer { border-top: none; padding-top: 0; flex-direction: row; align-items: center; }
+  .dashboard-grouped { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>CLASS CONTROL</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="container-app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo-box">
+
+        <h1>CLASS CONTROL</h1>
+
+        <p>Administrador Escolar</p>
+
+      </div>
+
+      <div class="sidebar-top">
+
+        <div class="title-row">
+          <h2>Mis Grupos</h2>
+        </div>
+
+        <ul id="grupos-list"></ul>
+
+      </div>
+
+      <div class="sidebar-bottom">
+
+        <button id="btn-nuevo-grupo">
+          + Crear Grupo
+        </button>
+
+      </div>
+
+    </aside>
+
+    <!-- CONTENIDO -->
+    <section class="content">
+
+      <!-- PANTALLA VACÍA -->
+      <div
+        id="seleccionar-grupo"
+        class="empty-state"
+      >
+
+        <div class="empty-box">
+
+          <h2>Bienvenido</h2>
+
+          <p>
+            Selecciona un grupo del menú lateral
+            para administrar asistencias.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- VISTA DEL GRUPO -->
+      <div
+        id="vista-grupo"
+        style="display:none"
+      >
+
+        <!-- HEADER -->
+        <header class="grupo-header">
+
+          <div class="header-left">
+
+            <h2 id="grupo-titulo"></h2>
+
+            <span>
+              Control de alumnos y estadísticas
+            </span>
+
+          </div>
+
+          <div class="header-right">
+
+            <button
+              class="tab active"
+              data-tab="asistencia"
+            >
+              Lista
+            </button>
+
+            <button
+              class="tab"
+              data-tab="dashboard"
+            >
+              Reportes
+            </button>
+
+            <button id="btn-editar-grupo">
+              Modificar
+            </button>
+
+            <button id="btn-eliminar-grupo">
+              Borrar
+            </button>
+
+          </div>
+
+        </header>
+
+        <!-- TAB ASISTENCIA -->
+        <section
+          id="tab-asistencia"
+          class="tab-content"
+        >
+
+          <div class="top-toolbar">
+
+            <div class="toolbar-left">
+
+              <label>Fecha</label>
+
+              <input
+                type="date"
+                id="fecha-asistencia"
+              >
+
+            </div>
+
+            <div class="toolbar-right">
+
+              <button id="btn-nuevo-alumno">
+                + Agregar Alumno
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="table-box">
+
+            <table id="tabla-asistencia">
+
+              <thead>
+
+                <tr>
+
+                  <th>No.</th>
+
+                  <th>Alumno</th>
+
+                  <th>Asistencia</th>
+
+                  <th>Opciones</th>
+
+                </tr>
+
+              </thead>
+
+              <tbody id="asistencia-body"></tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <!-- TAB DASHBOARD -->
+        <section
+          id="tab-dashboard"
+          class="tab-content"
+          style="display:none"
+        >
+
+          <div class="top-toolbar">
+
+            <div>
+
+              <h3>Resumen General</h3>
+
+              <p>
+                Seguimiento de asistencia del grupo
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- CARDS -->
+          <div id="dashboard-resumen"></div>
+
+          <!-- TABLA -->
+          <div class="table-box">
+
+            <table id="tabla-dashboard">
+
+              <thead>
+
+                <tr>
+
+                  <th>Alumno</th>
+
+                  <th>Clases</th>
+
+                  <th>Asistencias</th>
+
+                  <th>Faltas</th>
+
+                  <th>Progreso</th>
+
+                </tr>
+
+              </thead>
+
+              <tbody id="dashboard-body"></tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- MODAL -->
+  <div
+    id="modal-overlay"
+    style="display:none"
+  >
+
+    <div id="modal-content">
+
+      <div class="modal-header">
+
+        <h3 id="modal-title"></h3>
+
+      </div>
+
+      <div id="modal-body"></div>
+
+      <div class="modal-actions">
+
+        <button id="modal-cancel">
+          Cancelar
+        </button>
+
+        <button id="modal-ok">
+          Guardar
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>

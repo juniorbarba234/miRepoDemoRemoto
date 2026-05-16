@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS_AUTH | Error</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #050505;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: repeating-linear-gradient(45deg, rgba(255, 0, 60, 0.05) 0px, rgba(255, 0, 60, 0.05) 2px, transparent 2px, transparent 8px);
+        }
+        .container {
+            max-width: 400px;
+            text-align: center;
+            padding: 40px;
+            background: rgba(20, 5, 5, 0.9);
+            border: 2px solid #ff003c;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.3);
+            animation: glitch 2s infinite;
+        }
+        h2 { color: #ff003c; text-shadow: 2px 0 0 #fff; letter-spacing: 3px; margin-top: 0; }
+        p { color: #ff99aa; font-size: 14px; margin: 20px 0 30px; word-wrap: break-word; }
+        button {
+            background: transparent;
+            color: #ff003c;
+            border: 1px solid #ff003c;
+            padding: 12px 24px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        button:hover { background: #ff003c; color: #000; box-shadow: 0 0 15px #ff003c; }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>ERROR CRÍTICO</h2>
+        <p>> DETALLE DEL FALLO:<br><span id="errorMessage"></span></p>
+        <button onclick="window.location.href='/'">REINICIAR MÓDULO</button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("errorMessage").textContent = params.get("msg") || "Error desconocido en el sistema.";
+    </script>
+</body>
+</html>

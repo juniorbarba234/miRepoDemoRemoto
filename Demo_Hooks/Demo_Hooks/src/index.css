@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050505;
+  background-image: 
+    linear-gradient(rgba(0, 255, 204, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 204, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: #e0e0e0;
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+  min-height: 100vh;
+}
